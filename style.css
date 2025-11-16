@@ -1,0 +1,663 @@
+#img {
+    height: 50px;
+    width: 110px;
+    background-color: transparent;
+    background-image: url(https://html.merku.love/rotors/assets/images/logo/logo_01_1x.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+}
+
+#btn {
+        width: 357px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+@media (max-width: 1160px) {
+    #btn {
+        display: none;
+    }
+
+    #heros {
+        background-size: contain !important;
+    }#c1{
+        top: 60px;
+        position: relative;
+    }
+}
+
+#heros {
+    width: 100vw;
+    height: 700px;
+    background-color: transparent;
+    background-image: url(https://html.merku.love/rotors/demo_assets/images/banner/img_01.png);
+    background-size: 60% 60%;
+    background-repeat: no-repeat;
+    background-position:  right 150px;
+}
+.nav-link {
+    color: aliceblue !important;
+}
+
+/* Change hamburger menu color to white */
+.navbar-toggler {
+    border-color: white !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+#content {
+    background-color: transparent;
+    width: 100vw;
+    height: 600px;
+    color: red;
+}
+
+#c1 {
+    background-color: transparent;
+    height: 500px;
+    width: 40%;
+    line-height: 30px !important;
+    text-align: center;
+    padding-left: 5%;
+}
+
+#c1 h1 {
+    font-size: 60px !important;
+    margin-bottom: 20px;
+}
+
+#c1 #btns {
+    margin-bottom: 20px !important;
+}
+
+@media(max-width:1090px) {
+    #content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #c1{
+        top: 70px;
+        position: relative;
+    }
+
+    #c1 h1 {
+        font-size: 200% !important;
+        margin-bottom: 20px;
+    }
+
+    #c1 {
+        width: 80%;
+    }
+}
+
+#btns {
+    background-color: red;
+    color: aliceblue;
+    font-weight: 900;
+}
+
+#s2 {
+    padding-left: 50%;
+    padding-right: 50%;
+    height: 1260px;
+    width: 100vw;
+}
+
+#s2i {
+    height: 400px;
+    width: 500px;
+    background-size: cover;
+    background-image: url(https://html.merku.love/rotors/demo_assets/images/home/img_01.jpg);
+}
+
+.d {
+    display: flex;
+}
+
+#s22 {
+    height: 400px;
+    width: 500px;
+    background-size: cover;
+    background-image: url(https://html.merku.love/rotors/demo_assets/images/home/img_02.jpg);
+}
+
+#s2m {
+    width: 100vw;
+}
+
+.d1 {
+    width: 100vw;
+    text-align: center;
+    padding: 30px;
+}
+
+.d2 {
+    padding: 20px;
+    justify-content: center;
+}
+
+.d2 h1 {
+    text-align: center;
+    margin-left: 150px;
+    margin-top: 150px;
+}
+
+@media(max-width:1020px) and (min-width:445px) {
+    .d2 {
+        flex-direction: column;
+        padding: 47px;
+        align-items: center;
+        justify-content: center;
+    }#c1{
+        top: 70px;
+        position: relative;
+    }
+
+    .d2 h1 {
+        text-align: center;
+        margin-right: 147px;
+        bottom: 60px;
+        position: relative;
+        width: 338px;
+        font-size: 194% !important;
+    }
+
+    #s2 {
+        height: 1600px;
+    }
+
+    #s2i {
+        width: 400px;
+    }
+
+    #s2 {
+        padding: 0%;
+    }
+
+    #s2i h1 {
+        position: absolute;
+        bottom: 200px;
+        padding-right: 350px;
+        margin-right: 100px;
+    }
+
+    #s22 h1 {
+        position: absolute;
+        bottom: 200px;
+        padding-right: 350px;
+        margin-right: 100px;
+    }
+}
+
+@media(max-width:445px)and (min-width:358px) {
+    .d2 {
+        flex-direction: column;
+        padding: 47px;
+        align-items: center;
+        justify-content: center;
+    }#c1{
+        top: 70px;
+        position: relative;
+    }
+
+    .d2 h1 {
+        text-align: center;
+        margin-right: 147px;
+        bottom: 60px;
+        position: relative;
+        width: 338px;
+        font-size: 194% !important;
+    }
+
+    #s2i {
+        width: 300px;
+        height: 300px;
+    }
+
+    #s2 {
+        height: 1300px;
+        padding: 0%;
+    }
+
+    #s2i h1 {
+        visibility: hidden;
+    }
+
+    #s22 h1 {
+        visibility: hidden;
+    }
+}
+
+@media(max-width:358px) {
+    .d2 {
+        flex-direction: column;
+        padding: 47px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .d2 h1 {
+        text-align: center;
+        margin-right: 147px;
+        bottom: 60px;
+        position: relative;
+        width: 338px;
+        font-size: 194% !important;
+    }
+
+    #s2i {
+        width: 250px;
+        height: 250px;
+        margin-right: 18px;
+#c1{
+        top: 70px;
+        position: relative;
+    }    }
+}
+
+#s2 {
+    padding: 0%;
+}
+
+/*  second portion */
+@media(max-width:1020px) and (min-width:445px) {
+    .d3 {
+        flex-direction: column-reverse;
+        padding: 47px;
+        align-items: center;
+        justify-content: center;
+    }#c1{
+        top: 70px;
+        position: relative;
+    }
+
+    .d3 h1 {
+        text-align: center;
+        margin-right: 137px;
+        bottom: 60px;
+        position: relative;
+        width: 338px;
+        font-size: 194% !important;
+    }
+
+    #s22 {
+        width: 400px;
+    }
+
+    #s2 {
+        padding: 0%;
+    }
+
+    #s2 {
+        height: 1700px;
+    }
+}
+
+@media(max-width:445px)and (min-width:358px) {
+    .d3 {
+        flex-direction: column-reverse;
+        padding: 47px;
+        align-items: center;
+        justify-content: center;
+    }#c1{
+        top: 70px;
+        position: relative;
+    }
+
+    .d3 h1 {
+        text-align: center;
+        margin-right: 137px;
+        bottom: 60px;
+        position: relative;
+        width: 338px;
+        font-size: 194% !important;
+    }
+
+    #s22 {
+        width: 300px;
+        height: 300px;
+    }
+
+    #s2 {
+        height: 1400px;
+        padding: 0%;
+    }
+
+    #s2 {
+        height: 1500px;
+    }
+}
+
+@media(max-width:358px) {
+    .d3 {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .d3 h1 {
+        text-align: center;
+        margin-right: 137px;
+        bottom: 60px;
+        position: relative;
+        width: 338px;
+        font-size: 194% !important;
+    }
+
+    #s22 {
+        width: 250px;
+        height: 250px;
+        margin-right: 18px;
+    }
+
+    #s2 {
+        height: 1300px;
+        padding: 0%;
+    }
+
+    #s2 {
+        height: 1400px;
+    }
+}
+
+/* new  */
+.d1 {
+    width: 100vw;
+    text-align: center;
+    padding: 30px;
+}
+
+.d3 {
+    padding: 20px;
+    justify-content: space-around;
+}
+
+.d3 h1 {
+    text-align: center;
+    margin-left: 150px;
+    margin-top: 150px;
+}
+
+#s2i:hover {
+    h1 {
+        display: block;
+        z-index: 2;
+        color: whitesmoke;
+        position: absolute;
+        left: 50px;
+
+    }
+
+    filter: sepia(1) saturate(5) hue-rotate(-50deg);
+
+}
+
+.h:hover {
+    color: red !important;
+}
+
+#s2i h1 {
+    display: none;
+    position: absolute;
+}
+
+/* new */
+#s22:hover {
+    h1 {
+        display: block;
+        z-index: 2;
+        color: whitesmoke;
+        position: absolute;
+        left: 50px;
+
+    }
+
+    filter: sepia(1) saturate(5) hue-rotate(-50deg);
+
+}
+
+#s22 h1 {
+    display: none;
+    position: absolute;
+}
+
+#s3 {
+    width: 100vw;
+    height: 2300px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+}
+
+#s3m {
+    width: 90%;
+    height: 90%;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#s3s {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    margin-left: -21px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.i {
+    height: 300px;
+    width: 300px;
+    background-color: brown;
+    margin: 10px;
+}
+
+#s3f {
+    width: 310px;
+    height: 200px;
+    color: aliceblue;
+    text-align: center;
+    padding-top: 7px;
+    font-size: large;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+@media(max-width:1068px)and (min-width:713px) {
+    #s3s {
+        height: 95%;
+    }
+
+    #s3 {
+        height: 3600px;
+    }
+}
+
+@media(max-width:713px) and (min-width:400px) {
+    #s3s {
+        height: 100%;
+    }
+
+    #s3 {
+        height: 6400px;
+    }
+
+    #s3s {
+        height: 100%;
+    }
+
+    #s3m {
+        height: 94%;
+        margin-left: 20px;
+    }
+
+    .i {
+        width: 330px;
+    }
+}body{
+    overflow-x: hidden;
+}
+
+.em {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}@media(max-width:400px){
+       #s3s {
+        height: 100%;
+    }
+
+    #s3 {
+        height: 6400px;
+    }
+
+    #s3s {
+        height: 100%;
+    }
+
+    #s3m {
+        height: 94%;
+    }
+
+    .i {
+        width: 237px;
+    }
+}body{
+    overflow-x: hidden;
+}
+.i:hover{
+     filter: sepia(1) saturate(5) hue-rotate(-50deg);
+     
+}.em:hover{
+    
+     h3{
+         color: red !important;
+     }    
+}nav{
+    background-color: black;
+}body{
+ background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url(https://images.unsplash.com/photo-1507136566006-cfc505b114fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3840&q=80);
+ background-size: cover;
+ background-attachment: fixed;
+ background-position: center;
+}.navbar-expand-lg{
+  background: rgba(255, 255, 255, 0.3);     backdrop-filter: blur(10px);          
+  -webkit-backdrop-filter: blur(10px);  
+  position: fixed;
+  width: 100vw;
+  z-index: 2;
+}@media(min-width:1090px){
+    #c1{
+        top: 80px;
+        position: relative;
+    }
+}@media(max-width:800px){
+    #heros{
+        height: 640px;
+    }
+}#se4{
+    height: 700px;
+background-color: #111111;
+width: 100vw;
+display: flex;
+justify-content: space-around;
+align-items: center;
+}#se4s1{
+    background-color: transparent;
+    width: 500px;
+    height: 400px;
+    padding: 60px;
+    font-weight: 900;
+    color: white;
+}#se4s1 h1{
+    margin-bottom: 18px;
+}#se4s1 p{
+    margin-bottom: 18px;
+}@media(max-width:1180px){
+    #se4{
+flex-direction: column;
+height: 1200px;
+    }
+}@media(max-width:660px) and (min-width:450px){
+    #se4 img{
+        width: 400px !important;
+        height: 400px !important;
+    }#se4 #se4s1{
+        width: 400px !important;
+        height: 400px !important;
+    }
+}@media(max-width:450px) and (min-width:360px){
+     #se4 img{
+        width: 300px !important;
+        height: 400px !important;
+        margin-left: -16px;
+    }#se4 #se4s1{
+        width: 300px !important;
+        padding: 0%;
+        padding-left: 20px !important;
+        padding-top: 20px !important;
+        height: 400px !important;
+    }
+}@media(max-width:360px){
+      #se4 img{
+        width: 250px !important;
+        height: 400px !important;
+        margin-left: -16px;
+    }#se4 #se4s1{
+        width: 250px !important;
+        padding: 0%;
+        padding-left: 20px !important;
+        padding-top: 20px !important;
+        height: 400px !important;
+        margin-right: 10px;
+    }
+}#se4s1 button{
+    background-color: red;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 900;
+}#se5s2{
+    background-image: url(https://html.merku.love/rotors/demo_assets/images/responsive.png);
+    background-size: 80vw;
+    background-position: center;
+    background-repeat: no-repeat;
+}#se5{
+    width: 100vw;
+    height: 800px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}#se5s2{
+    height: 600px;
+}#se5s1{
+    width: 100vw;
+    text-align: center;
+    color: white;
+    padding: 14px;
+        margin-top: 20px;
+}@media(max-width:660px){
+   #se5s2{
+    height: 251px;
+   }#se5{
+    height: 700px;
+   }
+}
