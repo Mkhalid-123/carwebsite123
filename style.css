@@ -10,7 +10,7 @@
 }
 
 #btn {
-        width: 357px;
+    width: 357px;
     background-color: red;
     color: white;
     border: none;
@@ -26,10 +26,13 @@
 
     #heros {
         background-size: contain !important;
-    }#c1{
+    }
+    #c1{
         top: 60px;
         position: relative;
     }
+
+    body { overflow-x: hidden !important; }
 }
 
 #heros {
@@ -45,7 +48,6 @@
     color: aliceblue !important;
 }
 
-/* Change hamburger menu color to white */
 .navbar-toggler {
     border-color: white !important;
 }
@@ -98,6 +100,8 @@
     #c1 {
         width: 80%;
     }
+
+    body { overflow-x: hidden !important; }
 }
 
 #btns {
@@ -158,7 +162,8 @@
         padding: 47px;
         align-items: center;
         justify-content: center;
-    }#c1{
+    }
+    #c1{
         top: 70px;
         position: relative;
     }
@@ -197,6 +202,8 @@
         padding-right: 350px;
         margin-right: 100px;
     }
+
+    body { overflow-x: hidden !important; }
 }
 
 @media(max-width:445px)and (min-width:358px) {
@@ -205,7 +212,8 @@
         padding: 47px;
         align-items: center;
         justify-content: center;
-    }#c1{
+    }
+    #c1{
         top: 70px;
         position: relative;
     }
@@ -236,6 +244,8 @@
     #s22 h1 {
         visibility: hidden;
     }
+
+    body { overflow-x: hidden !important; }
 }
 
 @media(max-width:358px) {
@@ -259,24 +269,28 @@
         width: 250px;
         height: 250px;
         margin-right: 18px;
-#c1{
+    }
+
+    #c1{
         top: 70px;
         position: relative;
-    }    }
+    }
+
+    body { overflow-x: hidden !important; }
 }
 
 #s2 {
     padding: 0%;
 }
 
-/*  second portion */
 @media(max-width:1020px) and (min-width:445px) {
     .d3 {
         flex-direction: column-reverse;
         padding: 47px;
         align-items: center;
         justify-content: center;
-    }#c1{
+    }
+    #c1{
         top: 70px;
         position: relative;
     }
@@ -301,6 +315,8 @@
     #s2 {
         height: 1700px;
     }
+
+    body { overflow-x: hidden !important; }
 }
 
 @media(max-width:445px)and (min-width:358px) {
@@ -309,7 +325,8 @@
         padding: 47px;
         align-items: center;
         justify-content: center;
-    }#c1{
+    }
+    #c1{
         top: 70px;
         position: relative;
     }
@@ -336,6 +353,8 @@
     #s2 {
         height: 1500px;
     }
+
+    body { overflow-x: hidden !important; }
 }
 
 @media(max-width:358px) {
@@ -368,9 +387,10 @@
     #s2 {
         height: 1400px;
     }
+
+    body { overflow-x: hidden !important; }
 }
 
-/* new  */
 .d1 {
     width: 100vw;
     text-align: center;
@@ -395,11 +415,9 @@
         color: whitesmoke;
         position: absolute;
         left: 50px;
-
     }
 
     filter: sepia(1) saturate(5) hue-rotate(-50deg);
-
 }
 
 .h:hover {
@@ -411,7 +429,6 @@
     position: absolute;
 }
 
-/* new */
 #s22:hover {
     h1 {
         display: block;
@@ -419,11 +436,9 @@
         color: whitesmoke;
         position: absolute;
         left: 50px;
-
     }
 
     filter: sepia(1) saturate(5) hue-rotate(-50deg);
-
 }
 
 #s22 h1 {
@@ -487,6 +502,8 @@ body {
     #s3 {
         height: 3600px;
     }
+
+    body { overflow-x: hidden !important; }
 }
 
 @media(max-width:713px) and (min-width:400px) {
@@ -498,10 +515,6 @@ body {
         height: 6400px;
     }
 
-    #s3s {
-        height: 100%;
-    }
-
     #s3m {
         height: 94%;
         margin-left: 20px;
@@ -510,25 +523,23 @@ body {
     .i {
         width: 330px;
     }
-}body{
-    overflow-x: hidden;
+
+    body { overflow-x: hidden !important; }
 }
 
 .em {
     display: flex;
     flex-direction: column;
     align-items: center;
-}@media(max-width:400px){
-       #s3s {
+}
+
+@media(max-width:400px){
+    #s3s {
         height: 100%;
     }
 
     #s3 {
         height: 6400px;
-    }
-
-    #s3s {
-        height: 100%;
     }
 
     #s3m {
@@ -538,88 +549,129 @@ body {
     .i {
         width: 237px;
     }
-}body{
-    overflow-x: hidden;
+
+    body { overflow-x: hidden !important; }
 }
+
 .i:hover{
-     filter: sepia(1) saturate(5) hue-rotate(-50deg);
-     
-}.em:hover{
-    
-     h3{
-         color: red !important;
-     }    
-}nav{
+    filter: sepia(1) saturate(5) hue-rotate(-50deg);
+}
+
+.em:hover{
+    h3{
+        color: red !important;
+    }    
+}
+
+nav{
     background-color: black;
-}body{
+}
+
+body{
  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url(https://images.unsplash.com/photo-1507136566006-cfc505b114fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3840&q=80);
  background-size: cover;
  background-attachment: fixed;
  background-position: center;
-}.navbar-expand-lg{
-  background: rgba(255, 255, 255, 0.3);     backdrop-filter: blur(10px);          
-  -webkit-backdrop-filter: blur(10px);  
+}
+
+.navbar-expand-lg{
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   position: fixed;
   width: 100vw;
   z-index: 2;
-}@media(min-width:1090px){
+}
+
+@media(min-width:1090px){
     #c1{
         top: 80px;
         position: relative;
     }
-}@media(max-width:800px){
+
+    body { overflow-x: hidden !important; }
+}
+
+@media(max-width:800px){
     #heros{
         height: 640px;
     }
-}#se4{
+
+    body { overflow-x: hidden !important; }
+}
+
+#se4{
     height: 700px;
-background-color: #111111;
-width: 100vw;
-display: flex;
-justify-content: space-around;
-align-items: center;
-}#se4s1{
+    background-color: #111111;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#se4s1{
     background-color: transparent;
     width: 500px;
     height: 400px;
     padding: 60px;
     font-weight: 900;
     color: white;
-}#se4s1 h1{
+}
+
+#se4s1 h1{
     margin-bottom: 18px;
-}#se4s1 p{
+}
+
+#se4s1 p{
     margin-bottom: 18px;
-}@media(max-width:1180px){
+}
+
+@media(max-width:1180px){
     #se4{
-flex-direction: column;
-height: 1200px;
+        flex-direction: column;
+        height: 1200px;
     }
-}@media(max-width:660px) and (min-width:450px){
+
+    body { overflow-x: hidden !important; }
+}
+
+@media(max-width:660px) and (min-width:450px){
     #se4 img{
         width: 400px !important;
         height: 400px !important;
-    }#se4 #se4s1{
+    }
+    #se4 #se4s1{
         width: 400px !important;
         height: 400px !important;
     }
-}@media(max-width:450px) and (min-width:360px){
-     #se4 img{
+
+    body { overflow-x: hidden !important; }
+}
+
+@media(max-width:450px) and (min-width:360px){
+    #se4 img{
         width: 300px !important;
         height: 400px !important;
         margin-left: -16px;
-    }#se4 #se4s1{
+    }
+    #se4 #se4s1{
         width: 300px !important;
         padding: 0%;
         padding-left: 20px !important;
         padding-top: 20px !important;
         height: 400px !important;
     }
-}@media(max-width:360px){
-      #se4 img{
+
+    body { overflow-x: hidden !important; }
+}
+
+@media(max-width:360px){
+    #se4 img{
         width: 250px !important;
         height: 400px !important;
         margin-left: -16px;
-    }#se4 #se4s1{
+    }
+    #se4 #se4s1{
         width: 250px !important;
         padding: 0%;
         padding-left: 20px !important;
@@ -627,40 +679,59 @@ height: 1200px;
         height: 400px !important;
         margin-right: 10px;
     }
-}#se4s1 button{
+
+    body { overflow-x: hidden !important; }
+}
+
+#se4s1 button{
     background-color: red;
     width: 150px;
     height: 50px;
     border-radius: 10px;
     color: white;
     font-weight: 900;
-}#se5s2{
+}
+
+#se5s2{
     background-image: url(https://html.merku.love/rotors/demo_assets/images/responsive.png);
     background-size: 80vw;
     background-position: center;
     background-repeat: no-repeat;
-}#se5{
+}
+
+#se5{
     width: 100vw;
     height: 800px;
     background-color: transparent;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-}#se5s2{
+}
+
+#se5s2{
     height: 600px;
-}#se5s1{
+}
+
+#se5s1{
     width: 100vw;
     text-align: center;
     color: white;
     padding: 14px;
-        margin-top: 20px;
-}@media(max-width:660px){
+    margin-top: 20px;
+}
+
+@media(max-width:660px){
    #se5s2{
     height: 251px;
-   }#se5{
+   }
+   #se5{
     height: 700px;
    }
-}#se6{
+
+   body { overflow-x: hidden !important; }
+}
+
+#se6{
     background-color: transparent;
     width: 100vw;
     height: 600px;
@@ -668,12 +739,18 @@ height: 1200px;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-}#se6s2 img{
+}
+
+#se6s2 img{
     margin-bottom: 29px;
     width: 100%;
-}#se6s2{
+}
+
+#se6s2{
     width: 80%;
-}#se7{
+}
+
+#se7{
     background-color:transparent;
     width: 100%;
     height: 500px;
@@ -681,23 +758,35 @@ height: 1200px;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-}#se7s2{
+}
+
+#se7s2{
    width: 80%;
    background-color: transparent;
    height: 70%;
    background-image: url(https://html.merku.love/rotors/demo_assets/images/widget/footer_01.jpg);
    background-size: cover;
    background-repeat: no-repeat;
-}@media(max-width:675px){
+}
+
+@media(max-width:675px){
     #se7s2{
         height: 50%;
     }
-}@media(max-width:900px){
+
+    body { overflow-x: hidden !important; }
+}
+
+@media(max-width:900px){
     #se7s2{
-  background-size: contain;
-  background-repeat: no-repeat;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
-}#se8{
+
+    body { overflow-x: hidden !important; }
+}
+
+#se8{
     background-color: transparent;
     height: 1200px;
     width: 100vw;
@@ -705,39 +794,55 @@ height: 1200px;
     flex-direction: column;   
     align-items: center; 
     padding: 40px;
-}.se8i{
+}
+
+.se8i{
     background-color:red;
     height: 70px;
     width: 70px;
     border-radius: 10px;
     margin: 90px;
-}#se8s1{
+}
+
+#se8s1{
     background-color:transparent;
     text-align: center;
     width: 400px;
     padding: 20px;
     color: aliceblue;
-}#se8s2{
+}
+
+#se8s2{
     background-color: transparent;
     display: flex;
     flex-wrap: wrap;
     width: 800px;
 }
+
 @media(max-width:660px){
    #se8s2{
     padding-left: 141px !important;
-   }  }
+   }
 
-   @media(max-width:370px){
+   body { overflow-x: hidden !important; }
+}
+
+@media(max-width:370px){
     #se8s2{
         padding-left: 283px !important;
-    }.s8si{
-      height: 111px;
-    width: 136px;
     }
-}.se8i p{
+    .s8si{
+      height: 111px;
+      width: 136px;
+    }
+
+    body { overflow-x: hidden !important; }
+}
+
+.se8i p{
     color: aliceblue;
-     position: relative; 
-     top: 70px;
-      width: 93px;
+    position: relative; 
+    top: 70px;
+    width: 93px;
+    font-weight: 700;
 }
