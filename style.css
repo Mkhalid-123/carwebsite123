@@ -8,6 +8,10 @@
     background-position: center;
     z-index: 1;
 }
+html, body {
+    overflow-x: hidden !important;
+}
+
 
 #btn {
     width: 357px;
@@ -794,6 +798,7 @@ body{
     flex-direction: column;   
     align-items: center; 
     padding: 40px;
+    background-color: #111111;
 }
 
 .se8i{
