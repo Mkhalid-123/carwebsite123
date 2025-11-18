@@ -792,13 +792,13 @@ body{
 
 #se8{
     background-color: transparent;
-    height: 1200px;
+    height: 1400px !important;
     width: 100vw;
     display: flex;
     flex-direction: column;   
     align-items: center; 
     padding: 40px;
-    background-color: #111111;
+    background-color: transparent;
 }
 
 .se8i{
@@ -821,33 +821,31 @@ body{
     background-color: transparent;
     display: flex;
     flex-wrap: wrap;
-    width: 800px;
+    width:800px;
 }
 
-@media(max-width:660px){
-   #se8s2{
-    padding-left: 141px !important;
-   }
-
-   body { overflow-x: hidden !important; }
+@media(max-width:660px) and (min-width:390px){
+  #se8{
+    height: 1719px !important;
+  }#se8s2{
+    width: 505px;
+  }
 }
-
-@media(max-width:370px){
-    #se8s2{
-        padding-left: 283px !important;
-    }
-    .s8si{
-      height: 111px;
-      width: 136px;
-    }
-
-    body { overflow-x: hidden !important; }
-}
-
 .se8i p{
     color: aliceblue;
     position: relative; 
     top: 70px;
     width: 93px;
     font-weight: 700;
+}@media(max-width:390px){
+ #se8{
+    height: 1231px !important;
+  }#se8s2{
+    width: 505px;
+    padding-left: 87px;
+  }
+  .se8i{
+    margin: 45px !important;
+  }
 }
+
