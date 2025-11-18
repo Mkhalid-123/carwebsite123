@@ -83,6 +83,7 @@ html, body {
 
 #c1 #btns {
     margin-bottom: 20px !important;
+    
 }
 
 @media(max-width:1090px) {
@@ -849,3 +850,51 @@ body{
   }
 }
 
+footer{
+width: 100vw;
+background-color: #111111;
+height: 500px;
+color: aliceblue !important;
+display: flex;
+justify-content: center;
+align-items: center;
+}#footer{
+    text-align: center;
+    padding: 30px;
+    width: 790px;
+    height: 500px;
+}#footer button{
+border-color: transparent;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: red;
+    border-radius: 10px;
+    width: 289px;
+    height: 70px;
+    padding: 10px;
+    margin-top: 20px;
+}@media(max-width:538px){
+    #footer h2{
+        font-size: 40px !important;
+    }#footer h1{
+        font-size: 70px !important;
+    }#footer button{
+        width: 253px;
+
+    }
+}
+@media(max-width:800px){
+
+    #heros{
+        background-position: bottom;
+    }
+}.c button {
+    background-color: red !important;
+    height: 60px;
+    width: 180px;
+    border-radius: 10px;
+    margin-right: 10px;
+    border-color: transparent;
+    font-weight:700  !important;
+}
