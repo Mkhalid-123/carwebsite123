@@ -16,6 +16,64 @@
 </head>
 
 <body>
+    <!-- Authentication Overlay -->
+    <div id="auth-overlay" class="auth-overlay">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-image">
+                    <img src="auth-bg.png" alt="Luxury Car">
+                    <div class="auth-image-overlay">
+                        <h3>Welcome to Rotors</h3>
+                        <p>Experience Luxury like never before.</p>
+                    </div>
+                </div>
+                <div class="auth-form-container">
+                    <div class="auth-header">
+                        <h2 id="auth-title">Login</h2>
+                        <p id="auth-subtitle">Welcome back! Please enter your details.</p>
+                        <p id="auth-error" style="color: #ff4444; font-size: 14px; margin-top: 10px; display: none;"></p>
+                    </div>
+                    
+                    <form id="login-form" class="auth-form">
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <input type="email" id="login-email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="auth-btn">Sign In</button>
+                    </form>
+
+                    <form id="signup-form" class="auth-form" style="display: none;">
+                        <div class="form-group">
+                            <label for="signup-name">Full Name</label>
+                            <input type="text" id="signup-name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-email">Email</label>
+                            <input type="email" id="signup-email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-password">Password</label>
+                            <input type="password" id="signup-password" placeholder="••••••••" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-confirm-password">Confirm Password</label>
+                            <input type="password" id="signup-confirm-password" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="auth-btn">Create Account</button>
+                    </form>
+
+                    <div class="auth-footer">
+                        <p id="toggle-text">Don't have an account? <a href="#" id="toggle-auth">Sign Up</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <a href="#heros"> <div id="firstbtn"> <i class="fa-solid fa-arrow-up"></i></div></a>
   
     <div id="heros">
@@ -34,7 +92,11 @@
                         <a class="nav-link active" aria-current="page" href="#" style="margin-right: 10%;">Home</a>
                         <a class="nav-link" href="#s3" style="margin-right: 10%;">Inner</a>
                         <a class="nav-link" href="#se4" style="margin-right: 10%;">Blogging</a>
-                        <a class="nav-link" href="#se6" style="cursor: pointer;">Widgets</a>
+                        <a class="nav-link" href="#se6" style="cursor: pointer; margin-right: 10%;">Widgets</a>
+                        <div id="user-info" style="display: none; align-items: center; margin-right: 10%;">
+                            <span id="user-name" style="color: white; margin-right: 10px; font-weight: 500;"></span>
+                            <button id="logout-btn" style="background: transparent; border: 1px solid red; color: red; padding: 5px 15px; border-radius: 5px; cursor: pointer;">Logout</button>
+                        </div>
                         <button id="btn">Purchase Now</button>
                     </div>
                 </div>
@@ -244,6 +306,11 @@
       <div id="footer"><h1 style="font-size: 90px; color:red;">Rotors</h1><h2 style="font-size: 60px;">Best & Luxury Cars Rental HTML5 Template.</h2><button>Purchase Rotors</button></div>
       </footer>
       <!-- footer ended -->
+    
+    <!-- Firebase Compat SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    
     <script src="java.js"></script>
 </body>
 
