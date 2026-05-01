@@ -1,0 +1,8 @@
+{
+  "name": "carwebsite",
+  "version": "1.0.0",
+  "description": "Rotors - Car Rental Website",
+  "scripts": {
+    "start": "npx -y serve -l 3000"
+  }
+}
