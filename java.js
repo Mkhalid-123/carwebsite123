@@ -12,6 +12,21 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 
+// Social Auth Providers
+const googleProvider = new firebase.auth.GoogleAuthProvider();
+const githubProvider = new firebase.auth.GithubAuthProvider();
+
+// Handle redirect result (for when popup is blocked and we fall back to redirect)
+auth.getRedirectResult()
+    .then((result) => {
+        if (result.user) {
+            console.log('Redirect Sign-In Success:', result.user.email);
+        }
+    })
+    .catch((error) => {
+        console.error('Redirect Sign-In Error:', error.code, error.message);
+    });
+
 // Friendly error messages
 function getFriendlyError(errorCode) {
     const errors = {
@@ -24,6 +39,11 @@ function getFriendlyError(errorCode) {
         'auth/too-many-requests': 'Too many failed attempts. Please try again later.',
         'auth/network-request-failed': 'Network error. Please check your connection.',
         'auth/user-disabled': 'This account has been disabled. Contact support.',
+        'auth/operation-not-allowed': 'This sign-in method is not enabled in the Firebase Console.',
+        'auth/popup-blocked': 'Sign-in popup was blocked by your browser. Please allow popups for this site.',
+        'auth/popup-closed-by-user': 'The sign-in popup was closed before completing the process.',
+        'auth/account-exists-with-different-credential': 'An account already exists with the same email address but different sign-in credentials. Please sign in using your original method.',
+        'auth/operation-not-supported-in-this-environment': 'This operation is not supported in the current environment. Please make sure you are running the site through a local web server (http://localhost) and not opening the HTML file directly.',
     };
     return errors[errorCode] || 'Something went wrong. Please try again.';
 }
@@ -60,6 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const userNameElement = document.getElementById('user-name');
     const purchaseBtn = document.getElementById('btn');
     const logoutBtn = document.getElementById('logout-btn');
+    const googleBtn = document.getElementById('google-btn');
+    const githubBtn = document.getElementById('github-btn');
 
     // Auth state listener
     auth.onAuthStateChanged((user) => {
@@ -194,6 +216,90 @@ document.addEventListener('DOMContentLoaded', () => {
             auth.signOut().catch((error) => console.error('Logout Error:', error));
         });
     }
+
+    // Handle Google Login
+    if (googleBtn) {
+        googleBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Google Sign-In clicked');
+            clearError();
+            
+            // Check protocol first
+            if (window.location.protocol === 'file:') {
+                showError('Google Sign-In requires a web server. Please open http://localhost:3000 instead.');
+                return;
+            }
+
+            // Add a small loading state to the button
+            const originalContent = googleBtn.innerHTML;
+            googleBtn.disabled = true;
+            googleBtn.style.opacity = '0.7';
+
+            auth.signInWithPopup(googleProvider)
+                .then((result) => {
+                    console.log('Google Sign-In Success:', result.user.email);
+                })
+                .catch((error) => {
+                    console.error('Google Sign-In Error:', error.code, error.message);
+                    // If popup was blocked or not supported, try redirect
+                    if (error.code === 'auth/popup-blocked' || 
+                        error.code === 'auth/operation-not-supported-in-this-environment') {
+                        console.log('Popup blocked, trying redirect...');
+                        return auth.signInWithRedirect(googleProvider);
+                    }
+                    if (error.code !== 'auth/popup-closed-by-user') {
+                        showError(getFriendlyError(error.code));
+                    }
+                    googleBtn.disabled = false;
+                    googleBtn.style.opacity = '1';
+                });
+        });
+    } else {
+        console.warn('Google button not found in DOM');
+    }
+
+    // Handle GitHub Login
+    if (githubBtn) {
+        githubBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('GitHub Sign-In clicked');
+            clearError();
+
+            // Check protocol first
+            if (window.location.protocol === 'file:') {
+                showError('GitHub Sign-In requires a web server. Please open http://localhost:3000 instead.');
+                return;
+            }
+
+            // Add a small loading state to the button
+            const originalContent = githubBtn.innerHTML;
+            githubBtn.disabled = true;
+            githubBtn.style.opacity = '0.7';
+
+            auth.signInWithPopup(githubProvider)
+                .then((result) => {
+                    console.log('GitHub Sign-In Success:', result.user.email);
+                })
+                .catch((error) => {
+                    console.error('GitHub Sign-In Error:', error.code, error.message);
+                    // If popup was blocked or not supported, try redirect
+                    if (error.code === 'auth/popup-blocked' || 
+                        error.code === 'auth/operation-not-supported-in-this-environment') {
+                        console.log('Popup blocked, trying redirect...');
+                        return auth.signInWithRedirect(githubProvider);
+                    }
+                    if (error.code !== 'auth/popup-closed-by-user') {
+                        showError(getFriendlyError(error.code));
+                    }
+                    githubBtn.disabled = false;
+                    githubBtn.style.opacity = '1';
+                });
+        });
+    } else {
+        console.warn('GitHub button not found in DOM');
+    }
 });
 
 // Scroll to Top Logic
@@ -207,3 +313,16 @@ window.addEventListener('scroll', function() {
         }
     }
 });
+
+// Protocol Check Warning
+if (window.location.protocol === 'file:') {
+    const warning = document.createElement('div');
+    warning.id = 'protocol-warning';
+    warning.innerHTML = `
+        <div style="background: #ff4444; color: white; padding: 15px; text-align: center; position: fixed; top: 0; left: 0; right: 0; z-index: 9999; font-family: sans-serif; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+            ⚠️ <strong>CRITICAL ERROR:</strong> You are opening this as a local file (file://). 
+            Google/GitHub Sign-In <strong>WILL NOT WORK</strong>. 
+            Please open <strong><a href="http://localhost:3000" style="color: #fff; text-decoration: underline; font-weight: bold;">http://localhost:3000</a></strong> in your browser instead.
+        </div>`;
+    document.body.prepend(warning);
+}
