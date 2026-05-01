@@ -217,6 +217,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Helper: Set button loading state
+    function setBtnLoading(btn, loading) {
+        if (!btn) return;
+        btn.disabled = loading;
+        btn.style.opacity = loading ? '0.6' : '1';
+        btn.style.pointerEvents = loading ? 'none' : 'auto';
+        if (loading) {
+            btn.dataset.originalHtml = btn.innerHTML;
+            const label = btn.querySelector('span');
+            if (label) label.textContent = 'Signing in...';
+        } else {
+            if (btn.dataset.originalHtml) btn.innerHTML = btn.dataset.originalHtml;
+        }
+    }
+
     // Handle Google Login
     if (googleBtn) {
         googleBtn.addEventListener('click', (e) => {
@@ -227,36 +242,48 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Check protocol first
             if (window.location.protocol === 'file:') {
-                showError('Google Sign-In requires a web server. Please open http://localhost:3000 instead.');
+                showError('Google Sign-In requires a web server. Please run "npm start" and open http://localhost:3000');
                 return;
             }
 
-            // Add a small loading state to the button
-            const originalContent = googleBtn.innerHTML;
-            googleBtn.disabled = true;
-            googleBtn.style.opacity = '0.7';
+            setBtnLoading(googleBtn, true);
 
+            // Try popup first, then auto-fallback to redirect
             auth.signInWithPopup(googleProvider)
                 .then((result) => {
                     console.log('Google Sign-In Success:', result.user.email);
                 })
                 .catch((error) => {
                     console.error('Google Sign-In Error:', error.code, error.message);
-                    // If popup was blocked or not supported, try redirect
+                    
                     if (error.code === 'auth/popup-blocked' || 
+                        error.code === 'auth/cancelled-popup-request' ||
                         error.code === 'auth/operation-not-supported-in-this-environment') {
-                        console.log('Popup blocked, trying redirect...');
+                        // Fallback to redirect
+                        console.log('Popup failed, falling back to redirect...');
+                        showError('Redirecting to Google sign-in...');
                         return auth.signInWithRedirect(googleProvider);
                     }
-                    if (error.code !== 'auth/popup-closed-by-user') {
+                    
+                    if (error.code === 'auth/popup-closed-by-user') {
+                        // User closed it intentionally, just reset
+                        setBtnLoading(googleBtn, false);
+                        return;
+                    }
+                    
+                    // Show a helpful error for common issues
+                    if (error.code === 'auth/operation-not-allowed') {
+                        showError('Google Sign-In is not enabled. Please enable it in your Firebase Console → Authentication → Sign-in method.');
+                    } else if (error.code === 'auth/unauthorized-domain') {
+                        showError('This domain is not authorized. Add "localhost" in Firebase Console → Authentication → Settings → Authorized domains.');
+                    } else {
                         showError(getFriendlyError(error.code));
                     }
-                    googleBtn.disabled = false;
-                    googleBtn.style.opacity = '1';
+                    setBtnLoading(googleBtn, false);
                 });
         });
     } else {
-        console.warn('Google button not found in DOM');
+        console.warn('Google button (#google-btn) not found in DOM');
     }
 
     // Handle GitHub Login
@@ -269,36 +296,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Check protocol first
             if (window.location.protocol === 'file:') {
-                showError('GitHub Sign-In requires a web server. Please open http://localhost:3000 instead.');
+                showError('GitHub Sign-In requires a web server. Please run "npm start" and open http://localhost:3000');
                 return;
             }
 
-            // Add a small loading state to the button
-            const originalContent = githubBtn.innerHTML;
-            githubBtn.disabled = true;
-            githubBtn.style.opacity = '0.7';
+            setBtnLoading(githubBtn, true);
 
+            // Try popup first, then auto-fallback to redirect
             auth.signInWithPopup(githubProvider)
                 .then((result) => {
                     console.log('GitHub Sign-In Success:', result.user.email);
                 })
                 .catch((error) => {
                     console.error('GitHub Sign-In Error:', error.code, error.message);
-                    // If popup was blocked or not supported, try redirect
+                    
                     if (error.code === 'auth/popup-blocked' || 
+                        error.code === 'auth/cancelled-popup-request' ||
                         error.code === 'auth/operation-not-supported-in-this-environment') {
-                        console.log('Popup blocked, trying redirect...');
+                        // Fallback to redirect
+                        console.log('Popup failed, falling back to redirect...');
+                        showError('Redirecting to GitHub sign-in...');
                         return auth.signInWithRedirect(githubProvider);
                     }
-                    if (error.code !== 'auth/popup-closed-by-user') {
+                    
+                    if (error.code === 'auth/popup-closed-by-user') {
+                        setBtnLoading(githubBtn, false);
+                        return;
+                    }
+                    
+                    // Show a helpful error for common issues
+                    if (error.code === 'auth/operation-not-allowed') {
+                        showError('GitHub Sign-In is not enabled. Please enable it in your Firebase Console → Authentication → Sign-in method.');
+                    } else if (error.code === 'auth/unauthorized-domain') {
+                        showError('This domain is not authorized. Add "localhost" in Firebase Console → Authentication → Settings → Authorized domains.');
+                    } else {
                         showError(getFriendlyError(error.code));
                     }
-                    githubBtn.disabled = false;
-                    githubBtn.style.opacity = '1';
+                    setBtnLoading(githubBtn, false);
                 });
         });
     } else {
-        console.warn('GitHub button not found in DOM');
+        console.warn('GitHub button (#github-btn) not found in DOM');
     }
 });
 
